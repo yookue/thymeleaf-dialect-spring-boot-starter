@@ -17,7 +17,7 @@
 package com.yookue.springstarter.thymeleafdialect.processor;
 
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.core.Ordered;

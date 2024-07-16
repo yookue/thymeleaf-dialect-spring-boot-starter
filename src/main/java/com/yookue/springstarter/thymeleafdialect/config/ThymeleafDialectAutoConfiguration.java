@@ -18,7 +18,7 @@ package com.yookue.springstarter.thymeleafdialect.config;
 
 
 import java.util.Optional;
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
