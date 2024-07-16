@@ -48,9 +48,9 @@ spring:
 
 - The `CommonsRngExpressionDialect` provides expressions with their associated classes as following:
 
-| Expression      | Associated Class                           |
-|-----------------|--------------------------------------------|
-| #randomProvider | org.apache.commons.rng.simple.RandomSource |
+| Expression      | Associated Class                               |
+|-----------------|------------------------------------------------|
+| #randomProvider | org.apache.commons.rng.simple.RandomSource#JDK |
 
 - Write your template code as following (take `img` as an example)
 ```
