@@ -20,21 +20,21 @@ package com.yookue.springstarter.thymeleafdialect.dialect;
 import org.thymeleaf.dialect.AbstractDialect;
 import org.thymeleaf.dialect.IExpressionObjectDialect;
 import org.thymeleaf.expression.IExpressionObjectFactory;
-import com.yookue.springstarter.thymeleafdialect.factory.CommonsLangExpressionFactory;
+import com.yookue.springstarter.thymeleafdialect.factory.CommonsRngExpressionFactory;
 
 
 /**
- * {@link org.thymeleaf.dialect.IExpressionObjectDialect} for apache commons-lang3
+ * {@link org.thymeleaf.dialect.IExpressionObjectDialect} for apache commons-rng
  *
  * @author David Hsing
  * @see org.thymeleaf.standard.StandardDialect
  * @see org.thymeleaf.spring6.dialect.SpringStandardDialect
  */
-public class CommonsLangExpressionDialect extends AbstractDialect implements IExpressionObjectDialect {
-    private static final String DIALECT_NAME = "CommonsLangDialect";    // $NON-NLS-1$
-    private static final IExpressionObjectFactory FACTORY_INSTANCE = new CommonsLangExpressionFactory();
+public class CommonsRngExpressionDialect extends AbstractDialect implements IExpressionObjectDialect {
+    private static final String DIALECT_NAME = "CommonsRngDialect";    // $NON-NLS-1$
+    private static final IExpressionObjectFactory FACTORY_INSTANCE = new CommonsRngExpressionFactory();
 
-    public CommonsLangExpressionDialect() {
+    public CommonsRngExpressionDialect() {
         super(DIALECT_NAME);
     }
 

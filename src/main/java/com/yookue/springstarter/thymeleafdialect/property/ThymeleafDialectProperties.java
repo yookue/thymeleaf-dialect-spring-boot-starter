@@ -48,9 +48,14 @@ public class ThymeleafDialectProperties implements Serializable {
      */
     private final CommonsLangDialect commonsLangDialect = new CommonsLangDialect();
 
+    /**
+     * Commons rng dialect attributes
+     */
+    private final CommonsRngDialect commonsRngDialect = new CommonsRngDialect();
+
 
     /**
-     * Properties for commons lang dialect
+     * Properties for commons lang
      *
      * @author David Hsing
      */
@@ -58,6 +63,31 @@ public class ThymeleafDialectProperties implements Serializable {
     @Setter
     @ToString
     public static class CommonsLangDialect implements Serializable {
+        /**
+         * Indicates whether to enable this dialect or not
+         * <p>
+         * Default is {@code true}
+         */
+        private Boolean enabled = true;
+
+        /**
+         * The priority order for processing thymeleaf engine bean
+         * <p>
+         * Default is {@code Ordered.LOWEST_PRECEDENCE - 1000}
+         */
+        private Integer processorOrder = Ordered.LOWEST_PRECEDENCE - 1000;
+    }
+
+
+    /**
+     * Properties for commons rng
+     *
+     * @author David Hsing
+     */
+    @Getter
+    @Setter
+    @ToString
+    public static class CommonsRngDialect implements Serializable {
         /**
          * Indicates whether to enable this dialect or not
          * <p>

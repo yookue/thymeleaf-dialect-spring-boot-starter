@@ -29,6 +29,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.thymeleaf.Thymeleaf;
 import com.yookue.springstarter.thymeleafdialect.processor.CommonsLangDialectProcessor;
+import com.yookue.springstarter.thymeleafdialect.processor.CommonsRngDialectProcessor;
 import com.yookue.springstarter.thymeleafdialect.property.ThymeleafDialectProperties;
 
 
@@ -44,12 +45,23 @@ import com.yookue.springstarter.thymeleafdialect.property.ThymeleafDialectProper
 @EnableConfigurationProperties(value = ThymeleafDialectProperties.class)
 public class ThymeleafDialectAutoConfiguration {
     public static final String PROPERTIES_PREFIX = "spring.thymeleaf-dialect";    // $NON-NLS-1$
+    public static final String LANG_DIALECT_PROCESSOR = "commonsLangDialectProcessor";    // $NON-NLS-1$
+    public static final String RNG_DIALECT_PROCESSOR = "commonsRngDialectProcessor";    // $NON-NLS-1$
 
-    @Bean
+    @Bean(name = LANG_DIALECT_PROCESSOR)
     @ConditionalOnProperty(prefix = PROPERTIES_PREFIX + ".commons-lang-dialect", name = "enabled", havingValue = "true", matchIfMissing = true)
-    @ConditionalOnMissingBean
-    public CommonsLangDialectProcessor commonsLangDialectProcessor(@Nonnull ThymeleafDialectProperties properties) {
+    @ConditionalOnMissingBean(name = LANG_DIALECT_PROCESSOR)
+    public CommonsLangDialectProcessor langDialectProcessor(@Nonnull ThymeleafDialectProperties properties) {
         CommonsLangDialectProcessor result = new CommonsLangDialectProcessor();
+        Optional.ofNullable(properties.getCommonsLangDialect().getProcessorOrder()).ifPresent(result::setOrder);
+        return result;
+    }
+
+    @Bean(name = RNG_DIALECT_PROCESSOR)
+    @ConditionalOnProperty(prefix = PROPERTIES_PREFIX + ".commons-rng-dialect", name = "enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnMissingBean(name = RNG_DIALECT_PROCESSOR)
+    public CommonsRngDialectProcessor rngDialectProcessor(@Nonnull ThymeleafDialectProperties properties) {
+        CommonsRngDialectProcessor result = new CommonsRngDialectProcessor();
         Optional.ofNullable(properties.getCommonsLangDialect().getProcessorOrder()).ifPresent(result::setOrder);
         return result;
     }

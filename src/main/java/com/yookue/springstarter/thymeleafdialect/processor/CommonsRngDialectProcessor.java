@@ -22,20 +22,20 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.core.Ordered;
 import org.thymeleaf.TemplateEngine;
-import com.yookue.springstarter.thymeleafdialect.dialect.CommonsLangExpressionDialect;
+import com.yookue.springstarter.thymeleafdialect.dialect.CommonsRngExpressionDialect;
 import lombok.Getter;
 import lombok.Setter;
 
 
 /**
- * {@link org.springframework.beans.factory.config.BeanPostProcessor} for {@link com.yookue.springstarter.thymeleafdialect.dialect.CommonsLangExpressionDialect}
+ * {@link org.springframework.beans.factory.config.BeanPostProcessor} for {@link com.yookue.springstarter.thymeleafdialect.dialect.CommonsRngExpressionDialect}
  *
  * @author David Hsing
  */
 @Getter
 @Setter
-public class CommonsLangDialectProcessor implements BeanPostProcessor, Ordered {
-    private final CommonsLangExpressionDialect dialect = new CommonsLangExpressionDialect();
+public class CommonsRngDialectProcessor implements BeanPostProcessor, Ordered {
+    private final CommonsRngExpressionDialect dialect = new CommonsRngExpressionDialect();
     private int order = 0;
 
     @Override

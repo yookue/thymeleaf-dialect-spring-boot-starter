@@ -21,13 +21,16 @@ spring:
     thymeleaf-dialect:
         commons-lang-dialect:
             processor-order: 0
+        commons-rng-dialect:
+            processor-order: 0
 ```
 
 - This starter creates the following dialects with their associated artifacts:
 
-| Dialect Class                | Associated Artifact              |
-|------------------------------|----------------------------------|
-| CommonsLangExpressionDialect | org.apache.commons:commons-lang3 |
+| Dialect Class                | Associated Artifact                   |
+|------------------------------|---------------------------------------|
+| CommonsLangExpressionDialect | org.apache.commons:commons-lang3      |
+| CommonsRngExpressionDialect  | org.apache.commons:commons-rng-simple |
 
 - The `CommonsLangExpressionDialect` provides expressions with their associated classes as following:
 
@@ -38,15 +41,20 @@ spring:
 | #charUtils         | org.apache.commons.lang3.CharUtils         |
 | #numberUtils       | org.apache.commons.lang3.math.NumberUtils  |
 | #objectUtils       | org.apache.commons.lang3.ObjectUtils       |
-| #randomUtils       | org.apache.commons.lang3.RandomUtils       |
 | #randomStringUtils | org.apache.commons.lang3.RandomStringUtils |
 | #regexUtils        | org.apache.commons.lang3.RegExUtils        |
 | #stringUtils       | org.apache.commons.lang3.StringUtils       |
 | #systemUtils       | org.apache.commons.lang3.SystemUtils       |
 
+- The `CommonsRngExpressionDialect` provides expressions with their associated classes as following:
+
+| Expression      | Associated Class                           |
+|-----------------|--------------------------------------------|
+| #randomProvider | org.apache.commons.rng.simple.RandomSource |
+
 - Write your template code as following (take `img` as an example)
 ```
-<img th:src="@{${'/asset/img/foobar-' + #randomUtils.nextInt(1,3) + '.png'}}">
+<img th:src="@{${'/asset/img/foobar-' + #randomProvider.nextInt(1,3) + '.png'}}">
 ```
 Ah, does it look cool?
 
@@ -58,7 +66,7 @@ Ah, does it look cool?
 
 ## Requirement
 
-- jdk 1.8+
+- jdk 17+
 
 ## License
 
