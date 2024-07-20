@@ -22,7 +22,7 @@
 
     <groupId>com.yookue.springstarter</groupId>
     <artifactId>thymeleaf-dialect-spring-boot-starter</artifactId>
-    <version>3.3.1</version>
+    <version>3.3.2</version>
 
     <name>${project.artifactId}</name>
     <description>Thymeleaf Dialect for Spring Boot Starter</description>
@@ -47,9 +47,9 @@
         <project.build.resourceEncoding>${file.encoding}</project.build.resourceEncoding>
         <project.reporting.outputEncoding>${file.encoding}</project.reporting.outputEncoding>
 
-        <spring-boot.version>3.3.1</spring-boot.version>
+        <spring-boot.version>3.3.2</spring-boot.version>
 
-        <commons-rng.version>1.5</commons-rng.version>
+        <commons-rng.version>1.6</commons-rng.version>
         <plexus-javase-util.version>2.0.0</plexus-javase-util.version>
 
         <javadoc-docent-maven-plugin.version>2.0.0</javadoc-docent-maven-plugin.version>
