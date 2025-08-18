@@ -20,9 +20,9 @@ package com.yookue.springstarter.thymeleafdialect.config;
 import java.util.Optional;
 import jakarta.annotation.Nonnull;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBooleanProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -39,7 +39,7 @@ import com.yookue.springstarter.thymeleafdialect.property.ThymeleafDialectProper
  * @author David Hsing
  */
 @Configuration(proxyBeanMethods = false)
-@ConditionalOnProperty(prefix = ThymeleafDialectAutoConfiguration.PROPERTIES_PREFIX, name = "enabled", havingValue = "true", matchIfMissing = true)
+@ConditionalOnBooleanProperty(prefix = ThymeleafDialectAutoConfiguration.PROPERTIES_PREFIX, name = "enabled", matchIfMissing = true)
 @ConditionalOnClass(value = Thymeleaf.class)
 @AutoConfigureAfter(value = ThymeleafAutoConfiguration.class)
 @EnableConfigurationProperties(value = ThymeleafDialectProperties.class)
@@ -49,7 +49,7 @@ public class ThymeleafDialectAutoConfiguration {
     public static final String RNG_DIALECT_PROCESSOR = "commonsRngDialectProcessor";    // $NON-NLS-1$
 
     @Bean(name = LANG_DIALECT_PROCESSOR)
-    @ConditionalOnProperty(prefix = PROPERTIES_PREFIX + ".commons-lang-dialect", name = "enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnBooleanProperty(prefix = PROPERTIES_PREFIX + ".commons-lang-dialect", name = "enabled", matchIfMissing = true)
     @ConditionalOnMissingBean(name = LANG_DIALECT_PROCESSOR)
     public CommonsLangDialectProcessor langDialectProcessor(@Nonnull ThymeleafDialectProperties properties) {
         CommonsLangDialectProcessor result = new CommonsLangDialectProcessor();
@@ -58,7 +58,7 @@ public class ThymeleafDialectAutoConfiguration {
     }
 
     @Bean(name = RNG_DIALECT_PROCESSOR)
-    @ConditionalOnProperty(prefix = PROPERTIES_PREFIX + ".commons-rng-dialect", name = "enabled", havingValue = "true", matchIfMissing = true)
+    @ConditionalOnBooleanProperty(prefix = PROPERTIES_PREFIX + ".commons-rng-dialect", name = "enabled", matchIfMissing = true)
     @ConditionalOnMissingBean(name = RNG_DIALECT_PROCESSOR)
     public CommonsRngDialectProcessor rngDialectProcessor(@Nonnull ThymeleafDialectProperties properties) {
         CommonsRngDialectProcessor result = new CommonsRngDialectProcessor();
