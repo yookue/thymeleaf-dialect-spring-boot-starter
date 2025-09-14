@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Yookue Ltd. All rights reserved.
+ * Copyright (c) 2022 Unikue Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.yookue.springstarter.thymeleafdialect.processor;
+package cn.unikue.springstarter.thymeleafdialect.processor;
 
 
 import jakarta.annotation.Nonnull;
@@ -22,13 +22,13 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.core.Ordered;
 import org.thymeleaf.TemplateEngine;
-import com.yookue.springstarter.thymeleafdialect.dialect.CommonsLangExpressionDialect;
+import cn.unikue.springstarter.thymeleafdialect.dialect.CommonsLangExpressionDialect;
 import lombok.Getter;
 import lombok.Setter;
 
 
 /**
- * {@link org.springframework.beans.factory.config.BeanPostProcessor} for {@link com.yookue.springstarter.thymeleafdialect.dialect.CommonsLangExpressionDialect}
+ * {@link org.springframework.beans.factory.config.BeanPostProcessor} for {@link cn.unikue.springstarter.thymeleafdialect.dialect.CommonsLangExpressionDialect}
  *
  * @author David Hsing
  */

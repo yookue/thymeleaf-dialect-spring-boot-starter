@@ -7,7 +7,7 @@ Spring Boot application integrates `thymeleaf` dialects quickly, to boost your t
 - Import dependencies
 ```xml
     <dependency>
-        <groupId>com.yookue.springstarter</groupId>
+        <groupId>cn.unikue.springstarter</groupId>
         <artifactId>thymeleaf-dialect-spring-boot-starter</artifactId>
         <version>LATEST</version>
     </dependency>
@@ -60,7 +60,7 @@ Ah, does it look cool?
 
 ## Document
 
-- Github: https://github.com/yookue/thymeleaf-dialect-spring-boot-starter
+- Github: https://github.com/unikueltd/thymeleaf-dialect-spring-boot-starter
 - Thymeleaf github: https://github.com/thymeleaf/thymeleaf
 - Thymeleaf homepage: https://thymeleaf.org
 
@@ -76,12 +76,12 @@ See the `NOTICE.txt` file for required notices and attributions.
 
 ## Donation
 
-You like this package? Then [donate to us](https://yookue.com/donation) to support the development.
+You like this package? Then [donate to us](https://unikue.cn/donation) to support the development.
 
 ## Copyright
 
-Beijing Yookue Network Technology Ltd.
+Beijing Unikue Network Technology Ltd.
 
 ## Website
 
-- Yookue: https://yookue.com
+- Unikue: https://unikue.cn

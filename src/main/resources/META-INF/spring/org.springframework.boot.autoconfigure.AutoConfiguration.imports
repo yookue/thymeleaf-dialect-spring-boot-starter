@@ -1,5 +1,5 @@
 # Thymeleaf Dialect for Spring Boot Starter
-# Copyright (c) 2022 Yookue Ltd. All rights reserved.
-# https://yookue.com
+# Copyright (c) 2022 Unikue Ltd. All rights reserved.
+# https://unikue.cn
 
-com.yookue.springstarter.thymeleafdialect.config.ThymeleafDialectAutoConfiguration
+cn.unikue.springstarter.thymeleafdialect.config.ThymeleafDialectAutoConfiguration

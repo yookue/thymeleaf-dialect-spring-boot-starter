@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Yookue Ltd. All rights reserved.
+ * Copyright (c) 2022 Unikue Ltd. All rights reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.yookue.springstarter.thymeleafdialect.factory;
+package cn.unikue.springstarter.thymeleafdialect.factory;
 
 
 import java.util.Set;
@@ -31,8 +31,8 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.beans.BeanUtils;
 import org.thymeleaf.context.IExpressionContext;
 import org.thymeleaf.expression.IExpressionObjectFactory;
-import com.yookue.commonplexus.javaseutil.util.CollectionPlainWraps;
-import com.yookue.commonplexus.javaseutil.util.StringUtilsWraps;
+import cn.unikue.commonplexus.javaseutil.util.CollectionPlainWraps;
+import cn.unikue.commonplexus.javaseutil.util.StringUtilsWraps;
 
 
 /**
